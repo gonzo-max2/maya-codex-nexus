@@ -1,5 +1,6 @@
 name: Build CV PDF
 
+# The generated PDF and hash manifest are derived only from the checked-in CV source.
 on:
   push:
     branches:
