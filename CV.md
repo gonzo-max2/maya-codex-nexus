@@ -4,7 +4,7 @@
 
 Agent infrastructure · verified software change · local-first developer platforms · native and real-time products
 
-Sofia, Bulgaria · [GitHub](https://github.com/gonzo-max2) · [MAYA case study](https://github.com/gonzo-max2/maya-codex-nexus) · [Aegis](https://github.com/gonzo-max2/aegis-unified-0.9.0) · [NOVA](https://github.com/gonzo-max2/NOVA)
+Sofia, Bulgaria · [GitHub](https://github.com/gonzo-max2) · [MAYA case study](https://github.com/gonzo-max2/maya-codex-nexus) · [Aegis](https://github.com/gonzo-max2/aegis-unified-0.9.0) · NOVA (private evaluation repository)
 
 [Print-ready CV](cv.html) · [PDF CV](Sasho-Abdulrahim-Derama-CV.pdf)
 
