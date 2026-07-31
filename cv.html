@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f4f5f2">
+  <meta name="description" content="Sasho Abdulrahim Derama - Senior AI Product and Systems Engineer.">
+  <title>Sasho Abdulrahim Derama - CV</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #111719;
+      --soft: #455155;
+      --muted: #697579;
+      --line: #d8ddda;
+      --paper: #fff;
+      --canvas: #ecefeb;
+      --accent: #146b62;
+      --accent-soft: #e4f0ed;
+      --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    }
+    * { box-sizing: border-box; }
+    html { background: var(--canvas); scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 14px;
+      line-height: 1.52;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
+    }
+    a { color: inherit; text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent); text-underline-offset: 3px; }
+    a:hover { color: var(--accent); }
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      border-bottom: 1px solid rgba(17, 23, 25, .08);
+      background: rgba(236, 239, 235, .88);
+      backdrop-filter: blur(16px);
+    }
+    .toolbar strong { font-size: 12px; letter-spacing: .14em; }
+    .toolbar nav { display: flex; gap: 18px; font-size: 12px; font-weight: 700; }
+    .toolbar button {
+      border: 0;
+      border-radius: 999px;
+      padding: 9px 14px;
+      background: var(--ink);
+      color: #fff;
+      font: 700 12px/1 var(--sans);
+      cursor: pointer;
+    }
+    .sheet {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 270px;
+      gap: 42px;
+      width: min(1080px, calc(100% - 36px));
+      margin: 34px auto 64px;
+      padding: 58px 62px 62px;
+      background: var(--paper);
+      box-shadow: 0 30px 90px rgba(30, 42, 39, .13);
+    }
+    header { grid-column: 1 / -1; padding-bottom: 30px; border-bottom: 2px solid var(--ink); }
+    .kicker { margin: 0 0 12px; color: var(--accent); font: 800 11px/1 var(--mono); letter-spacing: .16em; text-transform: uppercase; }
+    h1 { margin: 0; font-size: clamp(40px, 7vw, 70px); line-height: .94; letter-spacing: -.055em; }
+    .role { max-width: 900px; margin: 18px 0 0; color: var(--soft); font-size: clamp(18px, 2.5vw, 25px); line-height: 1.2; font-weight: 650; letter-spacing: -.02em; }
+    .contact { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 22px; color: var(--muted); font-size: 12px; }
+    main, aside { min-width: 0; }
+    section + section { margin-top: 34px; }
+    h2 { margin: 0 0 15px; padding-bottom: 8px; border-bottom: 1px solid var(--line); color: var(--accent); font: 800 11px/1 var(--mono); letter-spacing: .15em; text-transform: uppercase; }
+    h3 { margin: 0; font-size: 18px; line-height: 1.15; letter-spacing: -.025em; }
+    h3 span { display: block; margin-top: 5px; color: var(--muted); font: 700 10px/1.35 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    p { margin: 0; color: var(--soft); }
+    p + p { margin-top: 10px; }
+    ul { margin: 12px 0 0; padding: 0; list-style: none; }
+    li { position: relative; padding-left: 16px; color: var(--soft); }
+    li + li { margin-top: 7px; }
+    li::before { position: absolute; left: 0; top: .73em; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); content: ""; }
+    .summary { max-width: 790px; color: var(--ink); font-size: 15px; line-height: 1.58; }
+    .impact { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .impact article { padding: 16px; border: 1px solid var(--line); background: #fbfcfa; }
+    .impact strong { display: block; margin-bottom: 6px; color: var(--accent); font: 800 10px/1 var(--mono); letter-spacing: .12em; }
+    .impact p { font-size: 12px; }
+    .role-block + .role-block { margin-top: 28px; padding-top: 27px; border-top: 1px solid var(--line); }
+    .role-block > p { margin-top: 9px; font-weight: 650; color: var(--ink); }
+    .boundary { margin-top: 13px; padding: 11px 13px; border-left: 3px solid var(--accent); background: var(--accent-soft); color: #294742; font-size: 11px; }
+    aside section + section { margin-top: 28px; }
+    .fact-list { display: grid; gap: 12px; }
+    .fact-list div { padding-bottom: 11px; border-bottom: 1px solid var(--line); }
+    .fact-list dt { color: var(--muted); font: 700 9px/1 var(--mono); letter-spacing: .11em; text-transform: uppercase; }
+    .fact-list dd { margin: 5px 0 0; font-weight: 700; }
+    .skill-group + .skill-group { margin-top: 15px; }
+    .skill-group strong { display: block; margin-bottom: 5px; color: var(--ink); font-size: 11px; }
+    .skill-group p { font-size: 11px; line-height: 1.5; }
+    .project { padding: 13px 0; border-bottom: 1px solid var(--line); }
+    .project strong { display: block; margin-bottom: 4px; }
+    .project p { font-size: 11px; }
+    .evidence-note { padding: 14px; border: 1px solid #c8d9d5; background: var(--accent-soft); font-size: 10px; line-height: 1.5; }
+    footer { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 20px; padding-top: 26px; border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; }
+    @media (max-width: 820px) {
+      .sheet { grid-template-columns: 1fr; gap: 30px; padding: 42px 30px; }
+      .impact { grid-template-columns: 1fr; }
+      aside { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; }
+      aside section + section { margin-top: 0; }
+      footer { flex-direction: column; }
+    }
+    @media (max-width: 560px) {
+      .toolbar nav { display: none; }
+      .sheet { width: 100%; margin: 0; padding: 34px 20px; box-shadow: none; }
+      aside { grid-template-columns: 1fr; }
+      h1 { font-size: 42px; }
+    }
+    @media print {
+      @page { size: A4; margin: 12mm 13mm 13mm; }
+      html, body { background: #fff; }
+      body { font-size: 9.1pt; line-height: 1.36; }
+      .toolbar { display: none; }
+      .sheet { display: block; width: auto; margin: 0; padding: 0; box-shadow: none; }
+      header { padding-bottom: 14pt; }
+      h1 { font-size: 29pt; }
+      .role { margin-top: 7pt; font-size: 13pt; }
+      .contact { margin-top: 9pt; font-size: 7.8pt; }
+      main { float: left; width: 68%; padding-right: 8mm; }
+      aside { float: right; width: 32%; padding-left: 6mm; border-left: .4pt solid var(--line); }
+      section + section { margin-top: 16pt; }
+      h2 { margin-bottom: 7pt; padding-bottom: 4pt; font-size: 7.4pt; }
+      h3 { font-size: 11pt; }
+      h3 span { font-size: 6.7pt; }
+      .summary { font-size: 9.2pt; }
+      .impact { grid-template-columns: repeat(2, 1fr); gap: 5pt; }
+      .impact article { padding: 7pt; break-inside: avoid; }
+      .impact p, .project p, .skill-group p { font-size: 7.3pt; }
+      li + li { margin-top: 3.5pt; }
+      .role-block { break-inside: avoid; }
+      .role-block + .role-block { margin-top: 13pt; padding-top: 12pt; }
+      .boundary { margin-top: 6pt; padding: 5pt 6pt; font-size: 6.9pt; }
+      aside section { break-inside: avoid; }
+      .fact-list { gap: 6pt; }
+      .fact-list div { padding-bottom: 5pt; }
+      .project { padding: 6pt 0; }
+      .evidence-note { padding: 7pt; font-size: 6.6pt; }
+      footer { clear: both; padding-top: 10pt; font-size: 6.6pt; }
+      a { text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <strong>DERAMA / CURRICULUM VITAE</strong>
+    <nav aria-label="CV formats">
+      <a href="CV.md">Plain text</a>
+      <a href="Sasho-Abdulrahim-Derama-CV.pdf">PDF</a>
+      <a href="index.html">Product case study</a>
+    </nav>
+    <button type="button" onclick="window.print()">Print / Save PDF</button>
+  </div>
+
+  <article class="sheet">
+    <header>
+      <p class="kicker">Senior AI Product &amp; Systems Engineer</p>
+      <h1>Sasho Abdulrahim Derama</h1>
+      <p class="role">Agent infrastructure, verified software change, local-first developer platforms, and native real-time products.</p>
+      <div class="contact">
+        <span>Sofia, Bulgaria</span>
+        <a href="https://github.com/gonzo-max2">github.com/gonzo-max2</a>
+        <a href="https://github.com/gonzo-max2/maya-codex-nexus">MAYA case study</a>
+        <a href="https://github.com/gonzo-max2/aegis-unified-0.9.0">Aegis</a>
+        <span>NOVA · private evaluation</span>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>Executive profile</h2>
+        <p class="summary">Senior multidisciplinary engineer and product builder working where probabilistic AI meets deterministic software authority. I turn ambiguous product intent into inspectable systems with explicit state, bounded execution, verification, rollback, recovery, and operator control.</p>
+        <p>Hands-on across Python, FastAPI, Pydantic, TypeScript, React, Node.js, C++23, JUCE, Rust/Tauri, Linux, Docker, SQLite, Git, and GitHub Actions.</p>
+      </section>
+
+      <section>
+        <h2>Selected engineering outcomes</h2>
+        <div class="impact">
+          <article><strong>PRODUCT ARCHITECTURE</strong><p>Designed MAYA for operator experience, NOVA for proof-carrying source change, and Aegis for policy-gated execution.</p></article>
+          <article><strong>GOVERNED EXECUTION</strong><p>Built Aegis with one runtime authority exposed through a native CLI and React Studio.</p></article>
+          <article><strong>VERIFIED CHANGE</strong><p>Built NOVA around source identity, bounded patches, durable transactions, verification, signed records, and exact Git admission.</p></article>
+          <article><strong>RECORDED VALIDATION</strong><p>NOVA baseline records include 317,629 generated assertions, 95 browser assertions, 99 local-agent checks, 97 hostile-control checks, and 1,000 compatibility operations.</p></article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Independent product engineering</h2>
+
+        <article class="role-block">
+          <h3>Aegis <span>Principal Engineer / Product Creator · 2026-Present</span></h3>
+          <p>Policy, provenance, and reversible execution for semantic agents.</p>
+          <ul>
+            <li>Designed and implemented a local-first runtime between AI models and the operating system; deterministic code owns permissions, approvals, path confinement, process ownership, receipts, rollback data, and terminal completion.</li>
+            <li>Unified a prompt-toolkit/Rich CLI and React Studio over the same canonical runtime events and authority model.</li>
+            <li>Implemented persistent missions, checkpoints, cancellation, provider recovery, exact tool receipts, proof manifests, specialist routing, JIT skills, and workspace-scoped verified memory.</li>
+            <li>Hardened execution with process-group cleanup, output limits, optional Docker isolation, mandatory SSH host verification, secret redaction, and SSRF-aware web access.</li>
+          </ul>
+          <p class="boundary"><strong>Boundary:</strong> pre-production alpha for one operator on a trusted workstation; not presented as an independently audited multi-tenant security boundary.</p>
+        </article>
+
+        <article class="role-block">
+          <h3>NOVA <span>Product Architect / Full-Stack AI Engineer · 2026-Present</span></h3>
+          <p>Proof-carrying change control for machine-generated software.</p>
+          <ul>
+            <li>Built a React/Vite Studio and authenticated loopback-first Node agent for repository-aware inspection, bounded source proposals, isolated checks, durable apply, recovery, and rollback.</li>
+            <li>Implemented semantic source identity, exact-text patch preconditions, transaction journals, independent verification, and local Ed25519 change certificates.</li>
+            <li>Developed a reference change-control package for signed policy, evidence quorum, admission receipts, and exact base/head Git pre-receive enforcement.</li>
+            <li>Built a three-candidate Proof Gallery, orchestration core, explicit human selection, local branch/commit publication, and Scenario Lab.</li>
+          </ul>
+          <p class="boundary"><strong>Boundary:</strong> recorded checks are self-authored baseline evidence; hosted tenancy, RBAC, KMS/HSM custody, installed GitHub integration, and independent certification remain unfinished or absent.</p>
+        </article>
+
+        <article class="role-block">
+          <h3>MAYA <span>Independent Product Creator / Systems Designer · 2026-Present</span></h3>
+          <p>Operator-controlled AI engineering workspace.</p>
+          <ul>
+            <li>Directed the product around frame, observe, plan, authorize, execute, verify, and recover.</li>
+            <li>Designed distinct Mission and Decisions workspaces so state, evidence, and consequential authority remain inspectable.</li>
+            <li>Defined product principles for reviewable change, honest failure, recoverable history, calm operational UX, and local-first privacy.</li>
+            <li>Built the public case study from real sanitized interface captures while keeping private source and operational data private.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section>
+        <h2>Earlier professional experience</h2>
+        <article class="role-block">
+          <h3>Google Account Recovery Agent</h3>
+          <ul>
+            <li>Handled identity and access recovery cases where privacy, procedural accuracy, abuse prevention, and account safety were central.</li>
+            <li>Evaluated ownership evidence, escalated insufficient authority, and communicated outcomes without exposing sensitive information.</li>
+          </ul>
+        </article>
+        <article class="role-block">
+          <h3>eBay Catalog Agent</h3>
+          <ul>
+            <li>Created and maintained structured product records across taxonomies, attributes, identifiers, and variants.</li>
+            <li>Resolved duplicate, conflicting, incomplete, and inconsistent data through repeatable quality controls.</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <aside>
+      <section>
+        <h2>Core position</h2>
+        <dl class="fact-list">
+          <div><dt>Level</dt><dd>Senior multidisciplinary IC / technical lead</dd></div>
+          <div><dt>Primary domain</dt><dd>AI product and systems engineering</dd></div>
+          <div><dt>Location</dt><dd>Sofia, Bulgaria</dd></div>
+          <div><dt>Languages</dt><dd>Bulgarian · English</dd></div>
+        </dl>
+      </section>
+
+      <section>
+        <h2>Technical depth</h2>
+        <div class="skill-group"><strong>Languages</strong><p>Python, TypeScript, JavaScript, C++23, SQL, Bash; Rust working knowledge</p></div>
+        <div class="skill-group"><strong>AI and agents</strong><p>Tool calling, JSON Schema, model routing, Ollama, provider adapters, local inference, approvals, evidence, provenance</p></div>
+        <div class="skill-group"><strong>Frontend</strong><p>React, React Native, Expo, Vite, accessible interaction, responsive systems, WebSocket/SSE, Playwright</p></div>
+        <div class="skill-group"><strong>Backend and data</strong><p>FastAPI, Pydantic, Node.js, REST, SQLite, durable state, event streams, transactions</p></div>
+        <div class="skill-group"><strong>Native and real-time</strong><p>JUCE, CMake, Ninja, Tauri, audio/DSP architecture, GPU-oriented UI</p></div>
+        <div class="skill-group"><strong>Platform and quality</strong><p>Linux, Docker, GitHub Actions, SSH, pytest, Vitest, Ruff, ESLint, fuzz, concurrency, chaos, accessibility</p></div>
+      </section>
+
+      <section>
+        <h2>Additional systems</h2>
+        <div class="project"><strong>DERAMA Studio</strong><p>Native C++23/JUCE DAW and plug-in platform for real-time audio, hosting, rendering, and instrument-grade interaction.</p></div>
+        <div class="project"><strong>TripCab / Vozime</strong><p>React Native and Expo mobility product for authoritative trip state, rider/driver flows, offline recovery, safety, and accessibility.</p></div>
+        <div class="project"><strong>Forensic recovery and QA</strong><p>Evidence-oriented recovery, repository auditing, UI diagnostics, accessibility checks, and deterministic harnesses.</p></div>
+      </section>
+
+      <section>
+        <h2>Operating strengths</h2>
+        <p>First-principles architecture · technical product direction · system boundaries · failure and recovery design · skeptical QA · evidence-backed claims · high-density interaction design</p>
+      </section>
+
+      <section>
+        <h2>Evidence boundary</h2>
+        <p class="evidence-note">Public repositories contain implementation, architecture, validation artifacts, and real sanitized captures. Recorded check counts are tied to specific commits, fixtures, and environments; they are not represented as independent certification, customer adoption, or universal correctness.</p>
+      </section>
+    </aside>
+
+    <footer>
+      <span>Public portfolio: github.com/gonzo-max2</span>
+      <span>Source CV: CV.md · Generated PDF: Sasho-Abdulrahim-Derama-CV.pdf</span>
+    </footer>
+  </article>
+</body>
+</html>
