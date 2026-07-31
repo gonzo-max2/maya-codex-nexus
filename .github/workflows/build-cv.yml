@@ -1,0 +1,67 @@
+name: Build CV PDF
+
+on:
+  push:
+    branches:
+      - main
+      - agent/public-product-case-study
+    paths:
+      - CV.md
+      - cv.html
+      - scripts/build_cv_pdf.py
+      - .github/workflows/build-cv.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cv-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Generate deterministic CV
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Compile generator
+        run: python3 -m py_compile scripts/build_cv_pdf.py
+
+      - name: Generate PDF and manifest
+        run: python3 scripts/build_cv_pdf.py
+
+      - name: Verify deterministic regeneration
+        run: |
+          first_pdf="$(sha256sum Sasho-Abdulrahim-Derama-CV.pdf | cut -d' ' -f1)"
+          first_manifest="$(sha256sum cv-build-manifest.json | cut -d' ' -f1)"
+          python3 scripts/build_cv_pdf.py >/tmp/cv-build-second.json
+          test "$first_pdf" = "$(sha256sum Sasho-Abdulrahim-Derama-CV.pdf | cut -d' ' -f1)"
+          test "$first_manifest" = "$(sha256sum cv-build-manifest.json | cut -d' ' -f1)"
+          grep -q '^%PDF-1.4' Sasho-Abdulrahim-Derama-CV.pdf
+          tail -c 8 Sasho-Abdulrahim-Derama-CV.pdf | grep -q '%%EOF'
+
+      - name: Commit generated artifacts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Sasho-Abdulrahim-Derama-CV.pdf cv-build-manifest.json
+          if git diff --cached --quiet; then
+            echo "CV artifacts already current"
+          else
+            git commit -m "Regenerate CV PDF [skip ci]"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+
+      - name: Upload CV artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: sasho-abdulrahim-derama-cv-${{ github.sha }}
+          path: |
+            Sasho-Abdulrahim-Derama-CV.pdf
+            cv-build-manifest.json
+          if-no-files-found: error
+          retention-days: 30
