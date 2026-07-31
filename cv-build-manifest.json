@@ -1,10 +1,10 @@
 {
   "schema": "derama.cv-build.v1",
   "source": "CV.md",
-  "source_sha256": "0d32018bd53261e7268b6b542df6f8535a4484c86683792a30b2e172739d2f98",
+  "source_sha256": "bab07439b47e1d2c2c58a1924b2846d22b2727e385e46815eaa4a31c25d4383c",
   "output": "Sasho-Abdulrahim-Derama-CV.pdf",
-  "output_sha256": "51faa8b830eaf3f7ca7d47273684295bb4ce22051a836e646ce67ad27beada96",
-  "bytes": 20794,
+  "output_sha256": "9fb6e869ca3bc5eae2ed70d4d19c7697e759f159199dc7868bf8957f8102a5c1",
+  "bytes": 20792,
   "pages": 2,
   "generator": "scripts/build_cv_pdf.py",
   "properties": [
