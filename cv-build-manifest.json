@@ -1,0 +1,17 @@
+{
+  "schema": "derama.cv-build.v1",
+  "source": "CV.md",
+  "source_sha256": "0d32018bd53261e7268b6b542df6f8535a4484c86683792a30b2e172739d2f98",
+  "output": "Sasho-Abdulrahim-Derama-CV.pdf",
+  "output_sha256": "51faa8b830eaf3f7ca7d47273684295bb4ce22051a836e646ce67ad27beada96",
+  "bytes": 20794,
+  "pages": 2,
+  "generator": "scripts/build_cv_pdf.py",
+  "properties": [
+    "selectable text",
+    "ASCII PDF",
+    "standard PDF fonts",
+    "dependency-free",
+    "deterministic"
+  ]
+}
